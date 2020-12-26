@@ -25,12 +25,25 @@ namespace PartialMockClassLibraryTest
         [TestMethod]
         public void PartialMock()
         {
-            Mock<ClassWithProtectedTest> mock = new Mock<ClassWithProtectedTest>();
-
-            mock.CallBase = true;
+            Mock<ClassWithProtectedTest> mock = new Mock<ClassWithProtectedTest>() { CallBase = true};
             mock.Protected().Setup<int>("internalFeature").Returns(4);
             mock.Object.protMethod().Should().Be(4);
 
         }
+        [TestMethod]
+        public void PrivateObjectTest()
+        {
+            ClassWithProtected cwp = new ClassWithProtected();
+            PrivateObject privateObject = new PrivateObject(cwp);
+            int res = (int)privateObject.Invoke("protMethod");
+            res.Should().Be(3);
+        }
+        
+        public void Testable()
+        {
+            ClassWithProtectedTestable cwpt = new ClassWithProtectedTestable();
+            cwpt.protMethod().Should().Be(3);
+        }
     }
+
 }

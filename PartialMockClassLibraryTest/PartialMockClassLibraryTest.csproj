@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassWithProtectedTest.cs" />
+    <Compile Include="ClassWithProtectedTestable.cs" />
     <Compile Include="ComplexClassTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

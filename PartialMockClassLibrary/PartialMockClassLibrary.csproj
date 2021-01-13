@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassWithPrivate.cs" />
     <Compile Include="ClassWithProtected.cs" />
     <Compile Include="ComplexClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
